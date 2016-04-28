@@ -1,0 +1,28 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:m="urn:import:gwt.material.design.client.ui"
+>
+
+    <ui:style>
+        .loader {
+            position: absolute;
+            width: 712px;
+            height: 131px;
+            top: 50%;
+            left: 50%;
+            margin: -75px 0 0 -356px;
+            background-color: white;
+        }
+
+        .logo {
+            margin: 19px 0;
+            height: 100%;
+        }
+    </ui:style>
+
+    <ui:with field='res' type='client.resources.MaterialResources' />
+
+    <g:HTMLPanel ui:field="loader" addStyleNames="{style.loader} z-depth-1 center-align">
+        <m:MaterialImage resource="{res.logo}" addStyleNames="{style.logo}"/>
+        <m:MaterialProgress ui:field="progress" type="DETERMINATE" percent="0"/>
+    </g:HTMLPanel>
+</ui:UiBinder>

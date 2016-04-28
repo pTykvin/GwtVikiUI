@@ -1,0 +1,104 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:m="urn:import:gwt.material.design.client.ui"
+        xmlns:m.html="urn:import:gwt.material.design.client.ui.html"
+        xmlns:m.addins='urn:import:gwt.material.design.addins.client'
+>
+
+    <ui:with field="tokens" type="client.place.NameTokens"/>
+    <ui:with field="res" type="client.resources.MaterialResources"/>
+
+    <ui:style>
+        @external .sidebar, .nav-wrapper, .material-label;
+        .sidebar a {
+            padding: 0 !important;
+        }
+
+        .sidebar a, .sidebar i {
+            line-height: 1 !important;
+            height: 0 !important;
+        }
+
+        .sidebar i {
+            line-height: 0.5 !important;
+        }
+
+        nav {
+            box-shadow: none;
+        }
+
+        .body {
+            display: flex;
+            flex-flow: nowrap column;
+            font-size: 0;
+            line-height: 0;
+            width: 1024px;
+            height: 768px;
+            background-color: #f2f2f2;
+        }
+
+        * {
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+        }
+
+        .main {
+            flex: 1 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sideBar {
+            font-size: small;
+        }
+
+        .header {
+            z-index: 5;
+        }
+
+        .dialog_wrapper {
+            position: fixed;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .dialog_wrapper > * {
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </ui:style>
+    <g:HTMLPanel>
+        <g:HTMLPanel addStyleNames="{style.body}">
+            <!-- MENU -->
+
+            <m:MaterialSideNav ui:field="sideNav" m:id="sideBar" type="CLOSE" closeOnClick="false" width="280">
+                <m.addins:sideprofile.MaterialSideProfile
+                        url="http://static1.squarespace.com/static/51609147e4b0715db61d32b6/521b97cee4b05f031fd12dde/5519e33de4b06a1002802805/1431718693701/?format=1500w">
+                    <m:MaterialImage resource="{res.profile}"/>
+                    <m:MaterialLabel text="Павел Тыквин" textColor="white"/>
+                    <m:MaterialLink text="p.tykvin@crystals.ru" activates="dropProfile" iconType="ARROW_DROP_DOWN" iconPosition="RIGHT"
+                            textColor="white"/>
+                </m.addins:sideprofile.MaterialSideProfile>
+                <m:MaterialLink text="Продажа" textColor="black" waves="GREEN" iconType="SHOPPING_CART" iconColor="green darken-4"/>
+                <m:MaterialLink text="Возврат" textColor="black" waves="ORANGE" iconType="RECEIPT" iconColor="orange darken-4"/>
+                <m:MaterialLink text="Смены" textColor="black" waves="TEAL" iconType="BUSINESS_CENTER" iconColor="teal darken-4"/>
+                <m:MaterialLink text="Настройка" textColor="black" waves="DEFAULT" iconType="SETTINGS" iconColor="grey darken-4"/>
+            </m:MaterialSideNav>
+
+            <m.html:Header ui:field="header" addStyleNames="{style.header}"/>
+            <m:MaterialPanel ui:field="main" addStyleNames="{style.main}"/>
+            <m:MaterialLink ui:field="modeselector" targetHistoryToken="{tokens.getSale}" text="Collapsible" textColor="blue" waves="DEFAULT"/>
+
+            <g:HTMLPanel ui:field="dialogWrapper" addStyleNames="{style.dialog_wrapper}"/>
+
+        </g:HTMLPanel>
+        <!--<v:VikiKeyboard ui:field="keyboard"/>-->
+    </g:HTMLPanel>
+</ui:UiBinder>

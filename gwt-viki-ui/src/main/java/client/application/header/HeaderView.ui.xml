@@ -1,0 +1,133 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+        xmlns:m="urn:import:gwt.material.design.client.ui"
+>
+
+    <ui:style>
+        /* перегружено, чтобы всегда закрывать контент, выезжающим меню*/
+        .navmenu-permanent, .drag-target, #sidenav-overlay {
+            visibility: visible !important;
+        }
+
+        .nav-wrapper {
+            padding: 0;
+        }
+
+        header, footer, main {
+            margin-left: 0 !important;
+        }
+
+        nav.pinned {
+            width: 100% !important;
+        }
+
+        /*******/
+
+        .status {
+            padding-right: 12px;
+            width: 100%;
+            height: 24px;
+        }
+
+        .child {
+            line-height: 24px;
+            height: 100%;
+        }
+
+        .navbar {
+            display: none;
+            margin: 0 !important;
+        }
+
+        #sidenav-overlay, .lean-overlay {
+            opacity: 1 !important;
+        }
+
+        .navbutton {
+            padding-top: 10px !important;
+            width: 56px;
+        }
+
+        .material-icons {
+            line-height: 56px !important;
+        }
+
+        .tab, .tabs, .navbutton, .tab a span {
+            height: 56px !important;
+        }
+
+        .tab a {
+            color: white;
+        }
+
+        .tab a span, .navbutton {
+            line-height: 56px;
+        }
+
+        .tabscol, .tabs {
+            width: 712px !important;
+        }
+
+        .header {
+            font-size: small;
+            line-height: 1;
+        }
+    </ui:style>
+
+    <ui:with field='res' type='client.resources.MaterialResources'/>
+
+    <m:MaterialPanel>
+
+        <!-- HEADER -->
+
+        <m:MaterialPanel addStyleNames="{style.header} z-depth-1">
+
+            <!--status bar-->
+            <m:MaterialPanel ui:field="status" addStyleNames="{style.status} white-text"
+                             backgroundColor="grey darken-4">
+                <m:MaterialLabel ui:field="time" text=" " addStyleNames="{style.child}" textAlign="RIGHT"/>
+            </m:MaterialPanel>
+
+            <!--groups-->
+            <m:MaterialRow ui:field="header" backgroundColor="#4caf50 green"
+                           addStyleNames="{style.navbar} white-text">
+                <m:MaterialColumn>
+                <m:MaterialLink iconType="MENU" iconSize="SMALL" addStyleNames="{style.navbutton}"
+                                activates="sideBar" circle="true" textAlign="CENTER" float="LEFT"
+                                waves="LIGHT" iconColor="white" iconPosition="NONE"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn addStyleNames="{style.tabscol}}">
+                    <m:MaterialTab type="DEFAULT" backgroundColor="green" indicatorColor="green lighten-5" ui:field="tabs"
+                                   addStyleNames="{style.tabs}">
+                        <m:MaterialTabItem waves="YELLOW" grid="s4" addStyleNames="{style.tab}" >
+                            <m:MaterialLink text="Избранное" href="#1" textColor="white" ui:field="tab1"/>
+                        </m:MaterialTabItem>
+                        <m:MaterialTabItem waves="YELLOW" grid="s4" addStyleNames="{style.tab}">
+                            <m:MaterialLink text="группа 1" href="#2" textColor="white" ui:field="tab2"/>
+                        </m:MaterialTabItem>
+                        <m:MaterialTabItem waves="YELLOW" grid="s4" addStyleNames="{style.tab}">
+                            <m:MaterialLink text="группа 2" href="#3" textColor="white" ui:field="tab3"/>
+                        </m:MaterialTabItem>
+                        <m:MaterialTabItem waves="YELLOW" grid="s4" addStyleNames="{style.tab}">
+                            <m:MaterialLink text="группа 3" href="#4" textColor="white" ui:field="tab4"/>
+                        </m:MaterialTabItem>
+                        <m:MaterialTabItem waves="YELLOW" grid="s4" addStyleNames="{style.tab}">
+                            <m:MaterialLink text="группа 4" href="#5" textColor="white" ui:field="tab5"/>
+                        </m:MaterialTabItem>
+                    </m:MaterialTab>
+                </m:MaterialColumn>
+                <m:MaterialLink iconType="SEARCH" iconSize="SMALL" addStyleNames="{style.navbutton}"
+                                activates="sideBar" circle="true" textAlign="CENTER" float="RIGHT"
+                                waves="LIGHT" iconColor="white" iconPosition="NONE" />
+            </m:MaterialRow>
+        </m:MaterialPanel>
+
+        <!-- SUB MENU -->
+
+        <m:MaterialDropDown activator="dropProfile">
+            <m:MaterialLink iconType="POLYMER" text="First" textColor="black"/>
+            <m:MaterialLink iconType="POLYMER" text="Second" textColor="black"/>
+            <m:MaterialLink iconType="POLYMER" text="Third" textColor="black"/>
+        </m:MaterialDropDown>
+
+    </m:MaterialPanel>
+</ui:UiBinder>

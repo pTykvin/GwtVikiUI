@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'ru.crystals.viki'
+version = '1.0.0'
+
+description = """Gwt Material VIKI"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile group: 'com.github.gwtmaterialdesign', name: 'gwt-material', version:'1.5.0'
+    compile group: 'com.github.gwtmaterialdesign', name: 'gwt-material-addins', version:'1.5.0'
+
+    compile 'de.novanic.gwteventservice:gwteventservice:1.2.1'
+    compile group: 'com.google.gwt', name: 'gwt-user', version:'2.7.0'
+    compile group: 'com.google.gwt', name: 'gwt-servlet', version:'2.7.0'
+    testCompile group: 'junit', name: 'junit', version:'4.11'
+}

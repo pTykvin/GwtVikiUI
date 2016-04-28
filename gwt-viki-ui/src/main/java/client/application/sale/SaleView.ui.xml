@@ -1,0 +1,134 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'
+        xmlns:m="urn:import:gwt.material.design.client.ui"
+        xmlns:m.html="urn:import:gwt.material.design.client.ui.html"
+        xmlns:v='urn:import:gwt.material.design.viki.client.ui'
+>
+
+    <ui:style>
+
+        .sale {
+            flex-grow: 1;
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 0;
+        }
+
+        .child-left {
+            min-width: 520px;
+            display: flex;
+            flex-flow: nowrap column;
+        }
+
+        .child-right {
+            background-color: white;
+            display: flex;
+            flex-flow: nowrap column;
+        }
+
+        .child-left, .child-right {
+            flex: 1 0px;
+            flex-shrink: 1;
+        }
+
+        .tiles {
+            width: 100%;
+            flex-flow: row wrap;
+            display: flex;
+            padding: 8px;
+        }
+
+        .tiles > div {
+            margin: 8px;
+        }
+
+        .pay_button {
+            border-radius: 2px;
+            width: 472px;
+            height: 72px;
+            font-size: 24px;
+            font-weight: 400;
+            margin: 16px auto;
+            flex-shrink: 0;
+        }
+
+        .summary {
+            border-width: 0 !important;;
+            padding-bottom: 0 !important;
+            flex-shrink: 0;
+        }
+
+        .empty-tiles-wrapper {
+            width: 321px;
+        }
+
+        .empty-purchase-wrapper, .empty-tiles-wrapper {
+            line-height: 1;
+            margin: auto;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .empty-purchase-label {
+            text-align: center;
+            font-size: 24px;
+            padding-bottom: 24px;
+        }
+
+        .empty-tiles-title {
+            text-align: center;
+            font-size: 45px;
+            padding-bottom: 24px;
+        }
+
+        .empty-tiles-description {
+            text-align: center;
+            font-size: 24px;
+            padding-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .purchase-wrapper {
+            display: flex;
+            flex: 1 1;
+            flex-flow: column nowrap;
+        }
+
+        label {
+            line-height: 1;
+            font-size: 16pt;
+        }
+    </ui:style>
+
+    <ui:with field='res' type='client.resources.MaterialResources'/>
+    <g:HTMLPanel addStyleNames="{style.sale}"> 
+        <!--<m:MaterialPanel backgroundColor="grey lighten-4" padding="10">-->
+
+            <!--<m:MaterialPanel ui:field="endOnlyPanel" margin="10" paddingTop="40" textAlign="CENTER" backgroundColor="white" waves="DEFAULT" width="150px" height="150px" shadow="1">-->
+                <!--<m:MaterialIcon iconType="TOUCH_APP" iconSize="SMALL" />-->
+                <!--<m:MaterialLabel text="End Only" fontSize="1.5em"/>-->
+            <!--</m:MaterialPanel>-->
+
+        <!--</m:MaterialPanel>-->
+        <m.html:Div addStyleNames="{style.child-left}">
+            <m.html:Div ui:field="emptyTiles" addStyleNames="{style.empty-tiles-wrapper}" visible="false">
+                <m.html:Label text="Группа пуста" addStyleNames="{style.empty-tiles-title}"/>
+                <m.html:Label text="Добавьте товары в группу долгим нажатием на экран"
+                        addStyleNames="{style.empty-tiles-description}"/>
+                <m:MaterialImage resource="{res.emptyTiles}"/>
+            </m.html:Div>
+            <m.html:Div ui:field="tiles" addStyleNames="{style.tiles}"/>
+        </m.html:Div>
+        <m.html:Div addStyleNames="{style.child-right} z-depth-1" ui:field="right_child">
+            <m.html:Div addStyleNames="{style.purchase-wrapper}" ui:field="purchaseWrapper">
+                <v:VikiScrollPanel ui:field="purchase"/>
+                <v:VikiPurchasePosition product="Сумма" ui:field="summary" addStyleNames="{style.summary}"/>
+                <m:MaterialButton addStyleNames="{style.pay_button}" ui:field="payButton" text="Расчет" waves="LIGHT"
+                        backgroundColor="blue" textColor="white"/>
+            </m.html:Div>
+            <m.html:Div addStyleNames="{style.empty-purchase-wrapper}" ui:field="emptyPurchaseWrapper">
+                <m.html:Label text="Чек пуст" addStyleNames="{style.empty-purchase-label}"/>
+                <m:MaterialImage resource="{res.emptyPurchase}"/>
+            </m.html:Div>
+        </m.html:Div>
+    </g:HTMLPanel>
+</ui:UiBinder>
