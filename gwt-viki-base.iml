@@ -8,19 +8,13 @@
         <setting name="gwtScriptOutputStyle" value="PRETTY" />
         <setting name="gwtSdkUrl" value="file://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.8.0-beta1/" />
         <setting name="gwtSdkType" value="maven" />
-        <packaging>
-          <module name="GwtVikiDatastruct" enabled="false" />
-          <module name="GwtVikiDatastructDev" enabled="false" />
-        </packaging>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/target/gwt-viki-datastruct-1.0.0/WEB-INF/classes" />
+    <output url="file://$MODULE_DIR$/target/gwt-viki-base-1.0.0/WEB-INF/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -30,6 +30,7 @@
     <inherits name='gwt.material.design.viki.Resources'/>
     <inherits name="gwt.material.design.GwtMaterialDesignBasic"/>
     <inherits name="gwt.material.design.addins.GWTMaterialAddins"/>
+    <inherits name="GwtVikiDatastruct"/>
 
     <!-- Specify the paths for translatable code                    -->
     <source path='client'/>
