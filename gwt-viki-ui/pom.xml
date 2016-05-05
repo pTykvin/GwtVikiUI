@@ -9,10 +9,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.gwtmaterialdesign</groupId>
+    <groupId>ru.dreamkas.viki</groupId>
     <artifactId>gwt-viki-ui</artifactId>
+    <version>1.0.0</version>
+
     <packaging>war</packaging>
-    <version>1.5.0</version>
     <name>Gwt Viki UI</name>
     <description>Showcase for gwt-material</description>
 
@@ -201,12 +202,19 @@
             <artifactId>gwt-material-addins</artifactId>
             <version>${gwt-material.version}</version>
         </dependency>
+
         <!--Viki Material-->
         <dependency>
-            <groupId>com.github.gwtmaterialdesign</groupId>
-            <artifactId>gwt-material-viki</artifactId>
-            <version>${gwt-material.version}</version>
+            <groupId>ru.dreamkas.viki</groupId>
+            <artifactId>gwt-viki-material</artifactId>
+            <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>ru.dreamkas.viki</groupId>
+            <artifactId>gwt-viki-datastruct</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- App Engine -->
         <dependency>
             <groupId>com.google.appengine</groupId>

@@ -25,36 +25,27 @@
 -->
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
         "http://google-web-toolkit.googlecode.com/svn/tags/2.7.0/distro-source/core/src/gwt-module.dtd">
-<module rename-to='gwtvikiui'>
-    <!-- Inherit the core Web Toolkit stuff.                        -->
-    <inherits name='com.google.gwt.user.User'/>
-    <inherits name='com.google.gwt.inject.Inject'/>
-
-    <!--Theme-->
-    <inherits name='com.google.gwt.user.theme.clean.Clean'/>
-
-    <!--GWTP-->
-    <inherits name='com.gwtplatform.dispatch.Dispatch'/>
-    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
-
-    <!--GWT Material-->
-    <inherits name="gwt.material.design.GwtMaterialBasicWithJQueryDebug"/>
-    <inherits name="gwt.material.design.themes.GwtMaterialThemeBlue"/>
-    <inherits name="gwt.material.design.addins.GWTMaterialAddins"/>
-    <inherits name="gwt.material.design.viki.GWTMaterialViki"/>
+<module rename-to='gwtvikidatastruct'>
     <inherits name="GwtVikiDatastruct"/>
-    <inherits name="com.googlecode.gwt.charts.Charts"/>
 
-    <inherits name="client.Resources"/>
+    <inherits name="com.google.gwt.logging.Logging"/>
 
-    <inherits name="de.novanic.eventservice.GWTEventService" />
+    <set-property name="gwt.logging.logLevel" value="ALL" />
+    <set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
 
-    <!-- Specify the paths for translatable code-->
-    <source path='client'/>
-    <source path='shared'/>
+    <set-property name="compiler.stackMode" value="emulated" />
+    <set-property name="compiler.emulatedStack" value="true"/>
+    <set-property name="compiler.useSourceMaps" value="true" />
 
-    <set-configuration-property name="gin.ginjector.modules"
-                                value="client.gin.ClientModule"/>
+    <extend-property name="locale" values="en"/>
+    <set-property-fallback name="locale" value="en"/>
+
+    <set-configuration-property name="compiler.emulatedStack.recordLineNumbers" value="true"/>
+    <set-configuration-property name="compiler.emulatedStack.recordFileNames" value="true"/>
+    <set-configuration-property name="compiler.enum.obfuscate.names" value="false" />
+
+    <set-configuration-property name="CssResource.style" value="pretty"/>
+    <collapse-all-properties />
 
     <!-- allow Super Dev Mode -->
     <add-linker name="xsiframe"/>

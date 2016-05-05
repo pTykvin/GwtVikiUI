@@ -9,9 +9,9 @@ package client.application;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -44,9 +44,9 @@ import de.novanic.eventservice.client.event.Event;
 import de.novanic.eventservice.client.event.RemoteEventService;
 import de.novanic.eventservice.client.event.RemoteEventServiceFactory;
 import de.novanic.eventservice.client.event.listener.RemoteEventListener;
-import gwt.material.design.viki.client.share.dialog.base.VikiBooleanClientProperty;
-import gwt.material.design.viki.client.share.dialog.payment.ShowPaymentDialogTask;
-import gwt.material.design.viki.client.share.dialog.simple.ShowSimpleDialogTask;
+import client.dialog.base.VikiBooleanClientProperty;
+import client.dialog.payment.ShowPaymentDialogTask;
+import client.dialog.simple.ShowSimpleDialogTask;
 import gwt.material.design.viki.client.utils.JsUtils;
 import gwt.material.design.viki.client.utils.PropertyRegistrator;
 import shared.ChangeModeTask;
